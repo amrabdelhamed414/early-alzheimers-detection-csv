@@ -1,48 +1,49 @@
-# 🧠 Alzheimer’s Detection using Machine Learning
+# Early Alzheimer's Detection via Handwriting
 
-## 📌 Overview
-This project focuses on detecting early signs of Alzheimer’s disease using machine learning techniques applied on handwriting-based features from the DARWIN dataset.
-
-The goal is to build an accurate and robust classification system using an ensemble approach.
+This project predicts early signs of Alzheimer's disease from handwriting benchmark tests using a machine learning ensemble pipeline.
 
 ---
 
-## 🎯 Objective
-To develop a machine learning model that can classify individuals as Alzheimer’s patients or healthy controls based on extracted handwriting features.
+## Problem
+
+Early Alzheimer's detection from handwriting data is a non-invasive diagnostic approach. The DARWIN dataset contains handwriting task features from Alzheimer's patients and healthy controls. The goal was to build an ensemble model that reduces feature redundancy via PCA while maximizing predictive accuracy.
 
 ---
 
-## ⚙️ Approach
+## Approach
 
-- Applied Principal Component Analysis (PCA) for dimensionality reduction (450 → 65 features)
-- Built an Ensemble Voting Classifier combining:
-  - Random Forest
-  - Linear SVM (LinearSVC)
-  - XGBoost
-- Used 5-Fold Cross Validation for evaluation
-- Compared multiple ML models
+- Dimensionality reduction via PCA (65 features retained)
+- Ensemble voting classifier combining Random Forest, LinearSVC, XGBoost
+- 5-fold cross-validation for model selection
+- Evaluation across accuracy, precision, recall, specificity, and F1-score
 
 ---
 
-## 📊 Results
+## Results (Reduced Feature Set 450 → 65)
 
-The ensemble model achieved the best performance compared to individual models in terms of accuracy and F1-score.
+| Model              | Accuracy | F1-Score | Mean CV Score |
+|-------------------|----------|----------|---------------|
+| Ensemble          | 94.3%    | 95.0%    | 75.6%         |
+| Random Forest     | 91.4%    | 92.7%    | 77.0%         |
+| LinearSVC         | 91.4%    | 92.3%    | 69.0%         |
+| XGBoost           | 88.6%    | 90.0%    | 67.6%         |
+| Logistic Regression | 88.6%  | 89.5%    | 73.4%         |
+| GaussianNB        | 80.0%    | 84.4%    | 75.6%         |
+| SVM               | 82.9%    | 85.0%    | 81.3%         |
+
+The ensemble model outperformed all individual models on accuracy and F1-score.
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
-- Python
-- Scikit-learn
-- Pandas & NumPy
-- XGBoost
-- Matplotlib / Seaborn
+- Python 3.11+
+- scikit-learn
+- pandas, numpy
+- XGBoost, LightGBM
+- matplotlib / seaborn
 
 ---
 
-## 👨‍💻 My Contribution
+## Folder Structure
 
-- Worked on the machine learning model
-- Applied PCA for feature reduction
-- Built and tested ensemble models
-- Evaluated model performance using multiple metrics
