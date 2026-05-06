@@ -47,3 +47,18 @@ The ensemble model outperformed all individual models on accuracy and F1-score.
 
 ## Folder Structure
 
+```
+early-alzheimers-detection/
+├── src/
+│   └── gp2_ensemble_model_darwin_dataset.py
+├── data/
+│   └── data.csv
+├── collab notebook/
+│   └── GP2_Ensemble_Model_DARWIN_Dataset.ipynb
+├── results/
+│   └── PCA_Results.xlsx
+├── README.md
+├── requirements.txt
+├── .gitignore
+```
+
